@@ -20,10 +20,34 @@
   padding: 20px;
   border-style:solid;
   border-color: rgb(43, 43, 43);
-
 }
 
 ::placeholder {
   font-size: 15px;
   color: grey;
+}
+
+.art-section{
+  display: flex;
+  margin-top: 30px;
+  min-height: 70vh;
+}
+
+.art-piece-details{
+  min-width: 25vw;
+  max-width: 40vw;
+  min-height: 80vh;
+  border-style: solid;
+  border-style: none solid none none;
+  margin: 0 40px 0 0;
+  border-color: rgb(43, 43, 43);
+  border-width: 1.5px;
+}
+
+
+.art-piece-showcase{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
 }
