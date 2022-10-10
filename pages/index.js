@@ -82,7 +82,7 @@ const ExpandableTitle = ({ title, contentComponent }) => {
       <div className="section-title">
         {title}
         <div className="round-button" onClick={() => { setShow(!show) }}>
-          {show ? "🌼" : "🌸"}
+          <div className="icon">{show ? "🌼" : "🌸"} </div>
         </div>
       </div>
       {contentComponent}
@@ -191,11 +191,24 @@ const ArtPieceDetails = () => {
 
 
 
-      OWNER
+      <ExpandableTitle title={"OWNER"}
+        contentComponent={
+          <a href="">
+            0x74F...d97 →
+          </a>
+        } />
 
-      0x74F...d97 →
-      Generator →
 
+      <div className="extra-info-buttons">
+        <button>
+          Generator →
+        </button>
+
+
+        <button>
+          OpenSea →
+        </button>
+      </div>
 
 
     </div>);
