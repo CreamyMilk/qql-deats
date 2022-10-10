@@ -102,22 +102,20 @@ const FeaturesTable = () => {
     "Super Blocks": "No",
     "Turbulence": "High",
   }
+
   let featureTableRows = Object.entries(defaultFeatures).map(([title, value]) => {
     return (
-      <div key={title}>
+      <tr key={title}>
         <td className="feature-name">{title}</td>
         <td>{value}</td>
-      </div>
+      </tr>
     );
-
   });
 
   return (
     <table>
       <tbody>
-        <tr>
           {featureTableRows}
-        </tr>
       </tbody>
     </table>
   );
