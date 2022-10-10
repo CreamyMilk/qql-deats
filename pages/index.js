@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Home() {
   return (
@@ -75,12 +76,13 @@ const BidInfo = () => {
 
 
 const ExpandableTitle = ({ title, contentComponent }) => {
+  const [show,setShow] = useState(true)
   return (
-    <div className="section">
+    <div className={show ? "section":"section-hidden"}>
       <div className="section-title">
         {title}
-        <div className="round-button">
-          🌼
+        <div className="round-button" onClick={()=>{setShow(!show)}}>
+          { show ? "🌼": "🌸" }
         </div>
       </div>
       {contentComponent}
@@ -142,7 +144,12 @@ const ArtPieceDetails = () => {
         } />
 
 
-      RARITY
+      <ExpandableTitle title={"RARITY"}
+        contentComponent={
+          <a href="https://artacle.io/project/fidenza/token/78000887">Artacle LogoTied for #771 of 999</a>
+        } />
+
+      
 
       HISTORY
 
