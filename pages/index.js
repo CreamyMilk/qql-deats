@@ -1,9 +1,17 @@
+import Head from "next/head";
 import Image from "next/image";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 
 export default function Home() {
   return (
     <div>
+      <Head>
+        <title>Fidenza #887 by Tyler Hobbs | Archipelago</title>
+        <meta property="og:title" content="Fidenza #887 by 🍦 Creamy Milk"/>
+        <meta property="og:image" content="/000887.png"/>
+        <meta property="og:description" content="Fidenza is by far my most versatile algorithm to date. Although the program stays focused on structured curves and blocks, the varieties of scale, organization, texture, and color usage it can employ create a wide array of generative possibilities."/>
+        <meta name="description" content="Fidenza is by far my most versatile algorithm to date. Although the program stays focused on structured curves and blocks, the varieties of scale, organization, texture, and color usage it can employ create a wide array of generative possibilities."/>
+      </Head>
       <NavBar />
       <ArtSection />
     </div>
@@ -15,7 +23,7 @@ const ArtSection = () => {
   return (
     <div className="art-section">
       <ArtPieceDetails />
-      {isDesktopResolution ?<ArtPieceShowcase toggleClassName="mobile-image" />:null}
+      {isDesktopResolution ? <ArtPieceShowcase toggleClassName="mobile-image" /> : null}
     </div>
   );
 }
@@ -25,24 +33,24 @@ const NavBar = () => {
   return (
     <div className="nav-bar">
       {isDesktopResolution ?
-      <div>
-        ARCHIPELAGO
-      </div>:undefined}
+        <div>
+          ARCHIPELAGO
+        </div> : undefined}
       <input
         className="search"
         placeholder="🔍 Collection, artist, item, address..."
       />
 
       {isDesktopResolution ?
-      <div>
-      🍔 =</div>:undefined}
+        <div>
+          🍔 =</div> : undefined}
     </div>
   );
 }
 
 const ArtPieceShowcase = () => {
   return (
-    <div className= "art-piece-showcase">
+    <div className="art-piece-showcase">
       <Image src="/000887.png" alt="some cool dopamine trip" height={"1100"} width={"900"} />
     </div>)
 }
@@ -173,8 +181,8 @@ const ArtPieceDetails = () => {
       <h3 className="creator-name">Tyler Hobbs</h3>
 
 
- 
-      {!isDesktopResolution ?<ArtPieceShowcase toggleClassName="mobile-image" />:null}
+
+      {!isDesktopResolution ? <ArtPieceShowcase toggleClassName="mobile-image" /> : null}
 
       <BidInfo />
 
@@ -221,6 +229,10 @@ const ArtPieceDetails = () => {
           OpenSea →
         </button>
       </div>
+
+      <p>
+          Made by @CreamyMilk 🍦
+      </p>
 
 
     </div>);
