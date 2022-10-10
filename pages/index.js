@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 export default function Home() {
   return (
@@ -11,33 +11,38 @@ export default function Home() {
 }
 
 const ArtSection = () => {
+  const isDesktopResolution = useMatchMedia('(min-width:992px)', true)
   return (
     <div className="art-section">
       <ArtPieceDetails />
-      <ArtPieceShowcase />
+      {isDesktopResolution ?<ArtPieceShowcase toggleClassName="mobile-image" />:null}
     </div>
   );
 }
 
 const NavBar = () => {
+  const isDesktopResolution = useMatchMedia('(min-width:992px)', true)
   return (
     <div className="nav-bar">
+      {isDesktopResolution ?
       <div>
         ARCHIPELAGO
-      </div>
-      <label></label>
+      </div>:undefined}
       <input
         className="search"
         placeholder="🔍 Collection, artist, item, address..."
       />
-      <div>🍔 =</div>
+
+      {isDesktopResolution ?
+      <div>
+      🍔 =</div>:undefined}
     </div>
   );
 }
 
 const ArtPieceShowcase = () => {
   return (
-    <div className="art-piece-showcase">
+    <div className= "art-piece-showcase">
       <Image src="/000887.png" alt="some cool dopamine trip" height={"1100"} width={"900"} />
     </div>)
 }
@@ -157,12 +162,19 @@ const PieceHistory = () => {
     </table>
   );
 }
+
 const ArtPieceDetails = () => {
+  const isDesktopResolution = useMatchMedia('(min-width:992px)', true)
+
   return (
     <div className="art-piece-details">
       <h1 className="piece-id">#887</h1>
       <a href="https://archipelago.art/collections/fidenza" className="collection-creator">Fidenza</a>
       <h3 className="creator-name">Tyler Hobbs</h3>
+
+
+ 
+      {!isDesktopResolution ?<ArtPieceShowcase toggleClassName="mobile-image" />:null}
 
       <BidInfo />
 
@@ -212,4 +224,33 @@ const ArtPieceDetails = () => {
 
 
     </div>);
+}
+
+
+// some random way to know if the site is on desktop
+// https://stackoverflow.com/questions/67266495/how-can-i-hide-a-component-in-react-depending-on-the-screen-size
+
+const useMatchMedia = (mediaQuery, initialValue) => {
+  const [isMatching, setIsMatching] = useState(initialValue)
+  useEffect(() => {
+    const watcher = window.matchMedia(mediaQuery)
+    setIsMatching(watcher.matches)
+    const listener = (matches) => {
+      setIsMatching(matches.matches)
+    }
+    if (watcher.addEventListener) {
+      watcher.addEventListener('change', listener)
+    } else {
+      watcher.addListener(listener)
+    }
+    return () => {
+      if (watcher.removeEventListener) {
+        return watcher.removeEventListener('change', listener)
+      } else {
+        return watcher.removeListener(listener)
+      }
+    }
+  }, [mediaQuery])
+
+  return isMatching
 }
