@@ -7,6 +7,7 @@ export default function Home() {
     <div>
       <Head>
         <title>Fidenza #887 by Tyler Hobbs | Archipelago</title>
+        <meta name="viewport" content="width=device-width"/>
         <meta property="og:title" content="Fidenza #887 by 🍦 Creamy Milk"/>
         <meta property="og:image" content="/000887.png"/>
         <meta property="og:description" content="Fidenza is by far my most versatile algorithm to date. Although the program stays focused on structured curves and blocks, the varieties of scale, organization, texture, and color usage it can employ create a wide array of generative possibilities."/>
@@ -250,7 +251,7 @@ const useMatchMedia = (mediaQuery, initialValue) => {
     const listener = (matches) => {
       setIsMatching(matches.matches)
     }
-    
+
     if (watcher.addEventListener) {
       watcher.addEventListener('change', listener)
     }
