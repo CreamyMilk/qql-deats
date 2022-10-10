@@ -88,6 +88,40 @@ const ExpandableTitle = ({ title, contentComponent }) => {
   );
 }
 
+const FeaturesTable = () => {
+  const defaultFeatures = {
+    "Collision Check": "No Overlap",
+    "Colors": "Golf Socks",
+    "Density": "High",
+    "Have Margin": "No",
+    "Outlined": "No",
+    "Scale": "Jumbo",
+    "Shape Angles": "Curved",
+    "Soft Shapes": "No",
+    "Spiral": "No",
+    "Super Blocks": "No",
+    "Turbulence": "High",
+  }
+  let featureTableRows = Object.entries(defaultFeatures).map(([title, value]) => {
+    return (
+      <div key={title}>
+        <td className="feature-name">{title}</td>
+        <td>{value}</td>
+      </div>
+    );
+
+  });
+
+  return (
+    <table>
+      <tbody>
+        <tr>
+          {featureTableRows}
+        </tr>
+      </tbody>
+    </table>
+  );
+}
 const ArtPieceDetails = () => {
   return (
     <div className="art-piece-details">
@@ -104,12 +138,10 @@ const ArtPieceDetails = () => {
           </p>
         } />
 
-      {/* <ExpandableTitle title={"DESCRIPTION"}
+      <ExpandableTitle title={"FEATURES"}
         contentComponent={
-          <div className="description">
-            Fidenza is by far my most versatile algorithm to date. Although the program stays focused on structured curves and blocks, the varieties of scale, organization, texture, and color usage it can employ create a wide array of generative possibilities.
-          </div>
-        } /> */}
+          <FeaturesTable />
+        } />
 
 
       RARITY

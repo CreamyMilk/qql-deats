@@ -162,3 +162,12 @@ body {
   font-size: 17px;
   padding-right: 10px;
 }
+
+table{
+  border-collapse: collapse;
+}
+
+.feature-name{
+  color: grey;
+  width: 150px;
+}
