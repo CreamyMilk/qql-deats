@@ -231,7 +231,7 @@ const ArtPieceDetails = () => {
       </div>
 
       <p>
-          Made by @CreamyMilk 🍦
+          Made by <a href="https://github.com/CreamyMilk/qql-deats">@CreamyMilk 🍦 here</a>
       </p>
 
 
@@ -250,16 +250,14 @@ const useMatchMedia = (mediaQuery, initialValue) => {
     const listener = (matches) => {
       setIsMatching(matches.matches)
     }
+    
     if (watcher.addEventListener) {
       watcher.addEventListener('change', listener)
-    } else {
-      watcher.addListener(listener)
     }
+
     return () => {
       if (watcher.removeEventListener) {
         return watcher.removeEventListener('change', listener)
-      } else {
-        return watcher.removeListener(listener)
       }
     }
   }, [mediaQuery])

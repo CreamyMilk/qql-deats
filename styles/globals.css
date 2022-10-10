@@ -41,13 +41,13 @@ body {
   display: flex;
   margin-top: 30px;
   min-height: 70vh;
-  width: 100vw;
+  width: 100%;
   /* background-color: pink; */
 }
 
 .art-piece-details {
-  min-width: 10vw;
-  max-width: 20vw;
+  min-width: 10%;
+  max-width: 20%;
   min-height: 80vh;
   padding-left: 20px;
   border-style: solid;
@@ -230,8 +230,8 @@ table {
 
 @media only screen and (max-width: 992px) {
   .art-piece-details {
-    min-width: 100vw;
-    min-height: 100vw;
+    min-width: 100%;
+    min-height: 100%;
     border-style: none;
   }
 
