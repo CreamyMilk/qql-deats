@@ -1,24 +1,39 @@
-  html {
-    color-scheme: dark;
+/* @media (prefers-color-scheme: dark) { 
   }
+  */
 
-  body {
-    color: white;
-    background: rgb(24 24 27);
-  }
+@font-face {
+  font-family: 'Finder';
+  src: url('/Finder-Variable.woff2') 
+  format('woff2');
+}
 
-.nav-bar{
+* {
+  font-family: Finder,ui-sans-serif,system-ui;
+  font-weight: 700;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  color: white;
+  background: rgb(24 24 27);
+}
+
+.nav-bar {
   display: flex;
   padding: 1.25rem;
   align-items: center;
 }
 
-.search{
+.search {
   background-color: transparent;
   flex-grow: 1;
   margin: 0 50px;
   padding: 20px;
-  border-style:solid;
+  border-style: solid;
   border-color: rgb(43, 43, 43);
 }
 
@@ -27,16 +42,17 @@
   color: grey;
 }
 
-.art-section{
+.art-section {
   display: flex;
   margin-top: 30px;
   min-height: 70vh;
 }
 
-.art-piece-details{
-  min-width: 25vw;
-  max-width: 40vw;
+.art-piece-details {
+  min-width: 18vw;
+  max-width: 30vw;
   min-height: 80vh;
+  padding-left: 20px;
   border-style: solid;
   border-style: none solid none none;
   margin: 0 40px 0 0;
@@ -45,9 +61,71 @@
 }
 
 
-.art-piece-showcase{
+.art-piece-showcase {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100vw;
+}
+
+.collection-creator {
+  font-size: 30px;
+  color: white;
+  text-decoration: none;
+}
+
+.collection-creator:hover {
+  color: white;
+  font-size: 30px;
+  text-decoration: underline;
+}
+
+.creator-name {
+  margin: 0 0 20px;
+  color: grey;
+}
+
+.bid-info {
+  display: flex;
+}
+
+
+.price-info>small,
+.highest-bid-info>small {
+  color: rgb(152, 152, 152);
+}
+
+.price-info>h1,
+.highest-bid-info>h1 {
+  margin: 10px 0 0px;
+}
+
+.price-info>p,
+.highest-bid-info>p {
+  margin: 0 0 20px;
+  font-size: 15px;
+  color: grey;
+}
+
+.price-info>button {
+  margin: 0 0 20px;
+  font-size: 15px;
+  padding: 10px 20px;
+}
+
+.highest-bid-info>button {
+  color: white;
+  background-color: black;
+  border-style: solid;
+  border-color: grey;
+  border-width: 1px;
+  margin: 0 0 20px;
+  font-size: 16px;
+  padding: 10px 20px;
+}
+
+
+.highest-bid-info {
+  color: grey;
+  margin-left: 20px;
 }
