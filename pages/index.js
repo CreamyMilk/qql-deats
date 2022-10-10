@@ -76,13 +76,13 @@ const BidInfo = () => {
 
 
 const ExpandableTitle = ({ title, contentComponent }) => {
-  const [show,setShow] = useState(true)
+  const [show, setShow] = useState(true)
   return (
-    <div className={show ? "section":"section-hidden"}>
+    <div className={show ? "section" : "section-hidden"}>
       <div className="section-title">
         {title}
-        <div className="round-button" onClick={()=>{setShow(!show)}}>
-          { show ? "🌼": "🌸" }
+        <div className="round-button" onClick={() => { setShow(!show) }}>
+          {show ? "🌼" : "🌸"}
         </div>
       </div>
       {contentComponent}
@@ -117,7 +117,42 @@ const FeaturesTable = () => {
   return (
     <table>
       <tbody>
-          {featureTableRows}
+        {featureTableRows}
+      </tbody>
+    </table>
+  );
+}
+
+const PieceHistory = () => {
+  const defaultHistory = [
+    { type: "🚀 Sent to", address: "0xf88b90afFD941829f2B55F4A5cF02d2C2B2c96B2", date: "2022-02-20" },
+    { type: "🚀 Sent to", address: "metamix.eth", date: "2021-06-13" },
+    { type: "🍃 Minted by", address: "0x8FaB48C8D864bFA82B042A3936BF14D460Db8be6", date: "2021-06-11" },
+  ]
+
+  const addDotsForLongAddr = (longAddr) => {
+    let len = longAddr.length
+    if (len < 20) {
+      return longAddr;
+    }
+    return longAddr.slice(0, 6) + "..." + longAddr.slice(len - 4, len)
+  }
+
+
+  let historyTableRows = defaultHistory.map(({ type, address, date }) => {
+    return (
+      <tr key={date}>
+        <td className="history-type">{type}</td>
+        <td className="history-address">{addDotsForLongAddr(address)}</td>
+        <td className="history-date">{date}</td>
+      </tr>
+    );
+  });
+
+  return (
+    <table>
+      <tbody>
+        {historyTableRows}
       </tbody>
     </table>
   );
@@ -146,12 +181,15 @@ const ArtPieceDetails = () => {
 
       <ExpandableTitle title={"RARITY"}
         contentComponent={
-          <a href="https://artacle.io/project/fidenza/token/78000887">Artacle LogoTied for #771 of 999</a>
+          <a href="https://artacle.io/project/fidenza/token/78000887">Tied for #771 of 999</a>
         } />
 
-      
+      <ExpandableTitle title={"History"}
+        contentComponent={
+          <PieceHistory />
+        } />
 
-      HISTORY
+
 
       OWNER
 

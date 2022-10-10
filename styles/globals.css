@@ -175,9 +175,25 @@ body {
 
 table{
   border-collapse: collapse;
+  width: 100%;
 }
 
 .feature-name{
   color: grey;
   width: 150px;
+}
+
+.history-type{
+  width: 100px;
+  color: ghostwhite;
+}
+
+.history-address{
+  color: grey;
+}
+
+.history-date{
+  color:grey;
+  font-size: 13px;
+  text-align: right;
 }
