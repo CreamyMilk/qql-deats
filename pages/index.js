@@ -2,7 +2,6 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-
     <div>
       <NavBar />
       <ArtSection />
@@ -43,42 +42,50 @@ const ArtPieceShowcase = () => {
 }
 
 const BidInfo = () => {
-  return(
-      <div className="bid-info">
-
-        <div className="price-info">
-          <small>
-            PRICE
-          </small>
-          <h1>Ξ 95</h1>
-          <p>
-            Expires in 4d
-          </p>
-          <button>
-            Purchase
-          </button>
-        </div>
-
-
-        <div className="highest-bid-info">
-          <small>
-            HIGH BID
-          </small>
-          <h1>Ξ 0.003</h1>
-          <p>
-            Expires in 4d
-          </p>
-          <button>
-            Place bid
-          </button>
-        </div>
+  return (
+    <div className="bid-info">
+      <div className="price-info">
+        <small>
+          PRICE
+        </small>
+        <h1>Ξ 95</h1>
+        <p>
+          Expires in 4d
+        </p>
+        <button>
+          Purchase
+        </button>
       </div>
-    );
+
+      <div className="highest-bid-info">
+        <small>
+          HIGH BID
+        </small>
+        <h1>Ξ 0.003</h1>
+        <p>
+          Expires in 4d
+        </p>
+        <button>
+          Place bid
+        </button>
+      </div>
+    </div>
+  );
 }
 
 
-const RoundButton = () => {
-  return(<>🌼</>);
+const ExpandableTitle = ({ title, contentComponent }) => {
+  return (
+    <div className="section">
+      <div className="section-title">
+        {title}
+        <div className="round-button">
+          🌼
+        </div>
+      </div>
+      {contentComponent}
+    </div>
+  );
 }
 
 const ArtPieceDetails = () => {
@@ -88,17 +95,22 @@ const ArtPieceDetails = () => {
       <a href="https://archipelago.art/collections/fidenza" className="collection-creator">Fidenza</a>
       <h3 className="creator-name">Tyler Hobbs</h3>
 
-      <BidInfo/>
+      <BidInfo />
 
-      
-      <div className="section-title">
-        DESCRIPTION
-        <RoundButton />
-      </div>
+      <ExpandableTitle title={"DESCRIPTION"}
+        contentComponent={
+          <p className="description">
+            Fidenza is by far my most versatile algorithm to date. Although the program stays focused on structured curves and blocks, the varieties of scale, organization, texture, and color usage it can employ create a wide array of generative possibilities.
+          </p>
+        } />
 
+      {/* <ExpandableTitle title={"DESCRIPTION"}
+        contentComponent={
+          <div className="description">
+            Fidenza is by far my most versatile algorithm to date. Although the program stays focused on structured curves and blocks, the varieties of scale, organization, texture, and color usage it can employ create a wide array of generative possibilities.
+          </div>
+        } /> */}
 
-
-      FEATURES
 
       RARITY
 

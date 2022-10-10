@@ -10,7 +10,7 @@
 
 * {
   font-family: Finder,ui-sans-serif,system-ui;
-  font-weight: 500;
+  font-weight: 100;
 }
 
 html {
@@ -50,7 +50,7 @@ body {
 
 .art-piece-details {
   min-width: 18vw;
-  max-width: 30vw;
+  max-width: 20vw;
   min-height: 80vh;
   padding-left: 20px;
   border-style: solid;
@@ -128,4 +128,37 @@ body {
 .highest-bid-info {
   color: grey;
   margin-left: 20px;
+}
+
+.section{
+  margin-right: 15px;
+  padding-bottom: 20px;
+}
+
+.section-title{
+  color: grey;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+.round-button{
+  background-color:grey ;
+  font-size: 10px;
+  color: white;
+  font-weight: 100;
+  width: 25px;
+  height:25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.description{
+  font-family: Finder;
+  font-size: 17px;
+  padding-right: 10px;
 }
