@@ -24,11 +24,10 @@
 * {
   font-family: Finder, ui-sans-serif, system-ui;
   font-weight: 100;
-  color: var(--text);
 }
 
 body {
-  color: var(--text-color);
+  color: var(--text);
   background: var(--back);
 }
 
@@ -156,15 +155,15 @@ a:hover {
 }
 
 .section {
-  max-height: 100vh;
-  transition: all 1.5s ease-in;
-  overflow: hidden;
+  max-height: 300px;
+  transition:all 0.5s ease-in-out;
+  overflow: hidden; 
 }
 
 .section-hidden {
   max-height: 0;
-  transition: all 1.5s;
-  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  overflow: hidden; 
 }
 
 .section-title {
