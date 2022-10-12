@@ -7,11 +7,11 @@ export default function Home() {
     <div>
       <Head>
         <title>Fidenza #887 by Tyler Hobbs | Archipelago</title>
-        <meta name="viewport" content="width=device-width"/>
-        <meta property="og:title" content="Fidenza #887 by 🍦 Creamy Milk"/>
-        <meta property="og:image" content="/000887.png"/>
-        <meta property="og:description" content="Fidenza is by far my most versatile algorithm to date. Although the program stays focused on structured curves and blocks, the varieties of scale, organization, texture, and color usage it can employ create a wide array of generative possibilities."/>
-        <meta name="description" content="Fidenza is by far my most versatile algorithm to date. Although the program stays focused on structured curves and blocks, the varieties of scale, organization, texture, and color usage it can employ create a wide array of generative possibilities."/>
+        <meta name="viewport" content="width=device-width" />
+        <meta property="og:title" content="Fidenza #887 by 🍦 Creamy Milk" />
+        <meta property="og:image" content="/000887.png" />
+        <meta property="og:description" content="Fidenza is by far my most versatile algorithm to date. Although the program stays focused on structured curves and blocks, the varieties of scale, organization, texture, and color usage it can employ create a wide array of generative possibilities." />
+        <meta name="description" content="Fidenza is by far my most versatile algorithm to date. Although the program stays focused on structured curves and blocks, the varieties of scale, organization, texture, and color usage it can employ create a wide array of generative possibilities." />
       </Head>
       <NavBar />
       <ArtSection />
@@ -92,14 +92,16 @@ const BidInfo = () => {
 const ExpandableTitle = ({ title, contentComponent }) => {
   const [show, setShow] = useState(true)
   return (
-    <div className={show ? "section" : "section-hidden"}>
+    <div className="tile">
       <div className="section-title">
         {title}
         <div className="round-button" onClick={() => { setShow(!show) }}>
           <div className="icon">{show ? "🌼" : "🌸"} </div>
         </div>
       </div>
-      {contentComponent}
+      <div className={show ? "section" : "section-hidden"}>
+        {contentComponent}
+      </div>
     </div>
   );
 }
@@ -232,7 +234,7 @@ const ArtPieceDetails = () => {
       </div>
 
       <p>
-          Made by <a href="https://github.com/CreamyMilk/qql-deats">@CreamyMilk 🍦 here</a>
+        Made by <a href="https://github.com/CreamyMilk/qql-deats">@CreamyMilk 🍦 here</a>
       </p>
 
 
