@@ -3,18 +3,33 @@
   src: url('/Finder-Variable.woff2') format('woff2');
 }
 
+:root {
+  --back: rgb(24, 24, 27);
+  --text: white;
+  --button-color: grey;
+  --input-field: rgb(43, 43, 43);
+  --section-seprator: rgb(88, 88, 88);
+}
+
+@media screen and (prefers-color-scheme: light) {
+  :root {
+    --back: white;
+    --text: black;
+    --button-color: rgb(197, 197, 197);
+    --input-field: rgb(212 212 216 / 0.4);
+    --section-seprator: rgb(212 212 216);
+  }
+}
+
 * {
   font-family: Finder, ui-sans-serif, system-ui;
   font-weight: 100;
-}
-
-html {
-  color-scheme: dark;
+  color: var(--text);
 }
 
 body {
-  color: white;
-  background: rgb(24 24 27);
+  color: var(--text-color);
+  background: var(--back);
 }
 
 .nav-bar {
@@ -28,8 +43,9 @@ body {
   flex-grow: 1;
   margin: 0 50px;
   padding: 20px;
+  border-width: 1px;
   border-style: solid;
-  border-color: rgb(43, 43, 43);
+  border-color: var(--input-field)
 }
 
 ::placeholder {
@@ -49,21 +65,23 @@ body {
   min-width: 10%;
   max-width: 20%;
   min-height: 80vh;
-  padding-left: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
   border-style: solid;
   border-style: none solid none none;
   margin: 0 40px 0 0;
-  border-color: rgb(43, 43, 43);
+  border-color: var(--section-seprator);
   border-width: 1.5px;
 }
 
 a {
-  color: white;
+  color: var(--text);
   text-decoration: none;
 }
 
+
 a:hover {
-  color: white;
+  color: var(--text);
   text-decoration: underline;
 }
 
@@ -108,16 +126,16 @@ a:hover {
   margin: 0 0 20px;
   font-size: 15px;
   padding: 10px 20px;
-  color: white;
-  background-color: grey;
+  color: var(--back);
+  background-color: var(--text);
   border-style: solid;
   border-color: grey;
   border-width: 1px;
 }
 
 .highest-bid-info>button {
-  color: white;
-  background-color: black;
+  color: var(--text);
+  background-color: transparent;
   border-style: solid;
   border-color: grey;
   border-width: 1px;
@@ -138,7 +156,7 @@ a:hover {
 }
 
 .section {
-	max-height:100vh;
+  max-height: 100vh;
   transition: all 1.5s ease-in;
   overflow: hidden;
 }
@@ -159,8 +177,7 @@ a:hover {
 }
 
 .round-button {
-  background-color: grey;
-  color: white;
+  background-color: var(--button-color);
   width: 30px;
   height: 30px;
   display: flex;
@@ -191,11 +208,11 @@ table {
 
 .history-type {
   width: 100px;
-  color: ghostwhite;
+  color: var(--text);
 }
 
 .history-address {
-  color: grey;
+  color: var(--text);
 }
 
 .history-date {
@@ -220,14 +237,13 @@ table {
 }
 
 .extra-info-buttons>button {
-  color: white;
-  background-color: black;
+  color: var(--text);
+  background-color: var(--back);
   border-style: solid;
   border-color: grey;
   border-width: 1px;
-  margin: 0 0 10px;
   font-size: 13px;
-  padding: 5px 20px;
+  padding: 5px 15px;
 }
 
 @media only screen and (max-width: 992px) {
